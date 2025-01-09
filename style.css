@@ -1,0 +1,188 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #4CAF50, #2c7a7b);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Header Title */
+.header h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    color: #0f140f;
+}
+
+/* Navigation Styling */
+.header nav {
+    margin-top: 10px;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hover Effect for Links */
+.header nav a:hover {
+    color: #2c7a7b;
+    background-color: #fff;
+}
+
+
+section {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+pre {
+    background: #333;
+    color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    width: 50%;
+    margin: 0 auto; 
+    display: block; 
+}
+
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    color: rgb(37, 43, 39);
+}
+
+
+h1, h2 {
+    color: #385c40de;
+}
+
+.footer {
+    background-color: #251f1f;
+    color: #eee3e3;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.gallery-item {
+    width: 200px;
+    height: 200px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; 
+} 
+
+
+   .gallery img:hover {
+    transform: scale(1.5);
+}   
+
+
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+form p {
+    margin-top: 10px;
+}
+
+form p.success {
+    color: green;
+}
+
+form p.error {
+    color: red;
+}
+
+
+
