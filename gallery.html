@@ -5,6 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #2c7a7b);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin: 0;
+            color: #0f140f;
+        }
+
+        .header nav {
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .header nav a:hover {
+            color: #2c7a7b;
+            background-color: #fff;
+        }
+
+        /* Section Styling */
+        section {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            color: #385c40de;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Preformatted Code Block Styling */
+        pre {
+            background: #333;
+            color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            width: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #251f1f;
+            color: #eee3e3;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Form Styling */
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
