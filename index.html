@@ -4,73 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn CSS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        // Contents of js/active-nav.js
-        document.addEventListener("DOMContentLoaded", () => {
-            const navLinks = document.querySelectorAll("nav a");
-            const currentUrl = window.location.href;
-            navLinks.forEach(link => {
-                if (currentUrl.includes(link.getAttribute("href"))) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-    <script>
-        // Contents of js/smooth-scroll.js
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
-    </script>
-    <script>
-        // Contents of js/lightbox.js
-        document.addEventListener("DOMContentLoaded", () => {
-            const images = document.querySelectorAll(".gallery-item img");
-            images.forEach(image => {
-                image.addEventListener("click", () => {
-                    const lightbox = document.createElement("div");
-                    lightbox.id = "lightbox";
-                    document.body.appendChild(lightbox);
-
-                    const img = document.createElement("img");
-                    img.src = image.src;
-                    lightbox.appendChild(img);
-
-                    lightbox.addEventListener("click", () => {
-                        lightbox.remove();
-                    });
-                });
-            });
-        });
-    </script>
-
     <style>
-        /* Bounce Animation Box */
-        #bounceBox {
-            width: 100px;
-            height: 100px;
-            background-color: #3498db;
-            margin: 50px auto;
-            position: relative;
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-           /* Mouse-following box */
-           #floatingBox {
-            width: 50px;
-            height: 50px;
-            background-color: #3498db;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #2c7a7b);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin: 0;
+            color: #0f140f;
+        }
+
+        .header nav {
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .header nav a:hover {
+            color: #2c7a7b;
+            background-color: #fff;
+        }
+
+        /* Section Styling */
+        section {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            color: #385c40de;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Preformatted Code Block Styling */
+        pre {
+            background: #333;
+            color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            width: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #251f1f;
+            color: #eee3e3;
+            text-align: center;
+            padding: 10px;
             position: fixed;
-            pointer-events: none;
-            transition: transform 0.1s ease-out;
-            border-radius: 10px;
+            bottom: 0;
+            width: 100%;
         }
 
+        /* Form Styling */
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -108,17 +168,6 @@
         </section>
 
         <section>
-            <h2>CSS Box Model</h2>
-            <p>The box model is fundamental in CSS layout, as every HTML element is treated as a box. It consists of margins, borders, padding, and the actual content area.</p>
-            <ul>
-                <li><strong>Content:</strong> The actual content of the box.</li>
-                <li><strong>Padding:</strong> Clears an area around the content.</li>
-                <li><strong>Border:</strong> Surrounds the padding.</li>
-                <li><strong>Margin:</strong> Clears an area outside the border.</li>
-            </ul>
-        </section>
-
-        <section>
             <h2>Responsive Design with Media Queries</h2>
             <p>CSS media queries allow you to apply styles based on the screen size or device type, ensuring a responsive design:</p>
             <pre>
@@ -134,87 +183,24 @@
         </section>
 
         <section>
-            <h2>CSS Animations and Transitions</h2>
-            <p>CSS animations and transitions add interactivity and visual appeal to web pages. Here’s a simple hover transition:</p>
-            <pre>
-                <code>
-                    .button {
-                        background-color: #4CAF50;
-                        transition: background-color 0.3s ease;
-                    }
-                    .button:hover {
-                        background-color: #45a049;
-                    }
-                </code>
-            </pre>
-        </section>
+            <h2>Contact Us</h2>
+            <form action="submit_contact.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-        <!-- Bounce Animation Section -->
-        <section>
-            <h2>Bounce Animation</h2>
-            <button onclick="bounce()">Click to Bounce the Box</button>
-            <div id="bounceBox"></div>
-        </section>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-        <!-- Change Text Color Section -->
-        <section>
-            <h2>Change Text Color</h2>
-            <p id="myText">Click the button to change my color!</p>
-            <button onclick="changeTextColor()">Change Color</button>
-        </section>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
     </main>
 
     <footer class="footer">
         <p>&copy; <script>document.write(new Date().getFullYear());</script> LENON KADOZORA</p>
     </footer>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="submit_contact.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <input type="submit" value="Send Message">
-        </form>
-    </section>
-
-    <!-- Mouse-following Box Section -->
-    <div id="floatingBox"></div>
-
-    <script>
-        // Bounce Animation on Box
-        function bounce() {
-            var box = document.getElementById("bounceBox");
-            box.style.transition = "transform 0.5s ease";
-            box.style.transform = "translateY(-50px)";
-            setTimeout(function() {
-                box.style.transform = "translateY(0)";
-            }, 500);
-        }
-
-        // Change Text Color on Button Click
-        function changeTextColor() {
-            var text = document.getElementById("myText");
-            var colors = ["red", "green", "blue", "orange", "purple"];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            text.style.color = randomColor;
-        }
-
-        // Mouse-Following Floating Box
-        var floatingBox = document.getElementById("floatingBox");
-        document.addEventListener("mousemove", function(event) {
-            var mouseX = event.clientX;
-            var mouseY = event.clientY;
-            floatingBox.style.left = (mouseX + 20) + "px";
-            floatingBox.style.top = (mouseY + 20) + "px";
-        });
-    </script>
 </body>
 </html>
